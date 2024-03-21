@@ -1,11 +1,12 @@
-import { Container, Title, StyledImage } from './FirstPage.styled';
-import example from '../../assets/example.png';
+import { Container } from './FirstPage.styled';
+import { Button } from '../../components/Button';
+import { ButtonLoadMore } from '../../components/ButtonLoadMore';
 
 const FirstPage = () => {
   return (
     <Container>
-      <Title>First Page</Title>
-      <StyledImage src={example} alt="Example" />
+      <Button>Custom Btn</Button>
+      <ButtonLoadMore />
     </Container>
   );
 };
