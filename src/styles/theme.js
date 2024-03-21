@@ -17,7 +17,7 @@ export const theme = Object.freeze({
     buttonText: '#ffffff',
     buttonBorder: 'rgba(71, 84, 103, 0.2)',
 
-    border: ' rgba(16, 24, 40, 0.2)',
+    border: 'rgba(16, 24, 40, 0.2)',
     horizontalLine: 'rgba(16, 24, 40, 0.1)',
 
     mainBackground: '#ffffff',
