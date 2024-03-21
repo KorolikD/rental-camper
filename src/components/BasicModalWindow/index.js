@@ -1,0 +1,1 @@
+export { BasicModalWindow } from './BasicModalWindow';
