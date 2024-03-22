@@ -23,3 +23,13 @@ export const StyledImage = styled.img`
   height: 40px;
   object-fit: cover;
 `;
+
+export const CalendarInputWrap = styled.div`
+  position: relative;
+`;
+
+export const CalendarWrap = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
