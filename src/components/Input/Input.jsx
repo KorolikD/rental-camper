@@ -1,7 +1,6 @@
 import { Field, FormGroup } from './Input.styled';
 
 export const Input = ({
-  children,
   type,
   name,
   placeholder,
@@ -10,7 +9,6 @@ export const Input = ({
 }) => {
   return (
     <FormGroup htmlFor={name}>
-      {children}
       <Field
         type={type}
         name={name}

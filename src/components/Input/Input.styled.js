@@ -16,16 +16,17 @@ export const Field = styled.input`
   font-size: ${theme.fontSizes.small};
   line-height: 125%;
   color: ${theme.colors.main};
+  outline: transparent;
 
   &::placeholder {
     color: ${theme.colors.inputPlaceholderText};
   }
 
-  transition: ${`outline ${theme.animation.cubicBezier}`};
+  /* transition: ${`outline ${theme.animation.cubicBezier}`};
 
   &:focus {
     outline: 1px solid ${theme.colors.accent};
-  }
+  } */
 `;
 
 export const FormGroup = styled.label`
