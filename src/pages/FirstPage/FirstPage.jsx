@@ -8,14 +8,30 @@ import data from '../../campers.json';
 // import { CalendarInputWrap, CalendarWrap } from './FirstPage.styled';
 import { useState } from 'react';
 import { theme } from '../../styles';
-import SvgCustom from '../../components/SvgCustom/SvgCustom';
+import { SvgCustom } from '../../components/SvgCustom/SvgCustom';
 // import Calendar from '../../components/Calendar/Calendar';
 import { ExampleCalendar } from '../../components/Calendar copy';
+import { BasicModalWindow } from '../../components/BasicModalWindow';
+import { VehicleEquipment } from '../../components/VehicleEquipment';
 // import { Calendar } from '../../components/Calendar/Calendar';
 console.log('🤬>>>  data:\n', data);
 
 const FirstPage = () => {
   const [isOpenCalendar, setIsOpenCalendar] = useState(false);
+
+  const [modalIsOpen, setIsModalOpen] = useState(false);
+
+  const toggleCalendar = () => {
+    setIsOpenCalendar(!isOpenCalendar);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   // const [date, setDate] = useState(`10/10/2016`);
 
@@ -33,18 +49,14 @@ const FirstPage = () => {
       />
       <LocationInput />
       <Categories camper={data[0]} />
-
       {/* // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
-
-      <button onClick={() => setIsOpenCalendar(!isOpenCalendar)}>
+      <button onClick={toggleCalendar}>
         <SvgCustom icon={'calendar'} stroke={theme.colors.main} />
       </button>
-
       <ExampleCalendar
         isOpen={isOpenCalendar}
         ooBackClick={setIsOpenCalendar}
       />
-
       {/* 
       <CalendarInputWrap>
         <button onClick={() => setIsOpenCalendar(true)}>
@@ -61,6 +73,13 @@ const FirstPage = () => {
           />
         </CalendarWrap>
       </CalendarInputWrap> */}
+      {/* //!!!!!!!!!!!!!!!!!!!! Modal window */}
+      <BasicModalWindow isOpen={modalIsOpen} onRequestClose={closeModal}>
+        <div style={{ height: '500px', width: '500px' }}></div>
+      </BasicModalWindow>
+      <Button onClick={openModal}>Show more</Button>
+      {/* //!!!!!!!!!!!!!!!!!!!! Vehicle equipment */}
+      <VehicleEquipment />
     </div>
   );
 };

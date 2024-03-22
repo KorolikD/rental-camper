@@ -1,1 +1,1 @@
-export { default } from './SvgCustom.jsx';
+export * from './SvgCustom.jsx';

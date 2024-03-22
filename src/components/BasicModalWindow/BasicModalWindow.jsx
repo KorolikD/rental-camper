@@ -1,13 +1,13 @@
 // ! _____________________ Додати в компонент картки
 // const [modalIsOpen, setIsModalOpen] = useState(false);
 
-// function openModal() {
+// const openModal = () => {
 //   setIsModalOpen(true);
-// }
+// };
 
-// function closeModal() {
+// const closeModal = () => {
 //   setIsModalOpen(false);
-// }
+// };
 
 //!_____________________ Рендер модального вікна.
 // <BasicModalWindow isOpen={modalIsOpen} onRequestClose={closeModal}>
@@ -19,12 +19,14 @@
 // ! _____________________ Кнопка відкриття модального вікна
 //  <Button onClick={openModal}></Button>
 
-import SvgCustom from '../SvgCustom/SvgCustom';
-import theme from '../../styles/theme';
+import { SvgCustom } from '../SvgCustom/SvgCustom';
+
 import { CloseModalBtn } from './BasicModalWindow.styled';
 import './BasicModalWindow.css';
 
 import { Modal } from 'antd';
+import { theme } from '../../styles';
+
 export const BasicModalWindow = ({ isOpen, onRequestClose, children }) => {
   return (
     <>
@@ -38,11 +40,11 @@ export const BasicModalWindow = ({ isOpen, onRequestClose, children }) => {
       >
         <CloseModalBtn type="button" onClick={onRequestClose}>
           <SvgCustom
-            icon="icon-cross"
-            size="22"
-            color={theme.colors.white}
-            stroke={theme.colors.white}
-            hover={theme.colors.primary}
+            icon="cross"
+            width={32}
+            height={32}
+            stroke={theme.colors.main}
+            hover={theme.colors.accent}
           />
         </CloseModalBtn>
         {children}

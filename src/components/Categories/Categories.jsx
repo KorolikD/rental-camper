@@ -1,6 +1,6 @@
 import { firstLetterToUpperCase } from '../../helpers/firstLetterToUpperCase';
 import { theme } from '../../styles';
-import SvgCustom from '../SvgCustom/SvgCustom';
+import { SvgCustom } from '../SvgCustom/SvgCustom';
 import { CategoriesList, ListItem, Text } from './Categories.styled';
 
 export const Categories = ({ camper }) => {
