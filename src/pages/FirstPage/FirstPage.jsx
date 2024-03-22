@@ -1,12 +1,15 @@
-import { Container } from './FirstPage.styled';
+// import { Container } from './FirstPage.styled';
 import { Button } from '../../components/Button';
 import { ButtonLoadMore } from '../../components/ButtonLoadMore';
 import { LocationInput } from '../../components/LocationInput';
 import { Input } from '../../components/Input';
+import { Categories } from '../../components/Categories';
+import data from '../../campers.json';
+console.log('🤬>>>  data:\n', data);
 
 const FirstPage = () => {
   return (
-    <Container>
+    <div>
       <Button>Custom Btn</Button>
       <ButtonLoadMore />
       <br />
@@ -18,7 +21,8 @@ const FirstPage = () => {
         $height={'56px'}
       />
       <LocationInput />
-    </Container>
+      <Categories camper={data[0]} />
+    </div>
   );
 };
 
