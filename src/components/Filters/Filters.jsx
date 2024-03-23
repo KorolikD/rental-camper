@@ -190,7 +190,11 @@ export const Filters = () => {
         </Label>
       </FormBlockWrapper>
 
-      <Button type="submit" onClick={handleSubmit}>
+      <Button
+        style={{ marginTop: '80px' }}
+        type="submit"
+        onClick={handleSubmit}
+      >
         Search
       </Button>
     </form>

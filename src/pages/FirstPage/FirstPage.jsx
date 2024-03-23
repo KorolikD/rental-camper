@@ -1,7 +1,6 @@
 // import { Container } from './FirstPage.styled';
 import { Button } from '../../components/Button';
 import { ButtonLoadMore } from '../../components/ButtonLoadMore';
-import { LocationInput } from '../../components/LocationInput';
 import { Input } from '../../components/Input';
 import { Categories } from '../../components/Categories';
 import data from '../../campers.json';
@@ -13,6 +12,7 @@ import { SvgCustom } from '../../components/SvgCustom/SvgCustom';
 import { ExampleCalendar } from '../../components/Calendar copy';
 import { BasicModalWindow } from '../../components/BasicModalWindow';
 import { Filters } from '../../components/Filters';
+import { CamperCards } from '../../components/CamperCard';
 // import { Calendar } from '../../components/Calendar/Calendar';
 console.log('🤬>>>  data:\n', data);
 
@@ -47,7 +47,6 @@ const FirstPage = () => {
         $width={'400px'}
         $height={'56px'}
       />
-
       <Categories camper={data[0]} />
       {/* // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
       <button onClick={toggleCalendar}>
@@ -80,6 +79,9 @@ const FirstPage = () => {
       <Button onClick={openModal}>Show more</Button>
       {/* //!!!!!!!!!!!!!!!!!!!! Vehicle equipment */}
       <Filters />
+
+      {/* //!!!!!!!!!!!!!!!!!!!! CamperCards */}
+      <CamperCards campers={data} />
     </div>
   );
 };

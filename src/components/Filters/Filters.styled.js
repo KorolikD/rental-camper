@@ -62,32 +62,28 @@ export const Label = styled.label`
 
 export const Checkbox = styled.input`
   cursor: pointer;
-  opacity: 0;
+  visibility: hidden;
   position: absolute;
 
   /* &:checked + label {
     border: 1px solid ${theme.colors.accent};
   } */
 
-  &:checked {
-    + ${Label} {
-      border: 1px solid ${theme.colors.accent};
-    }
+  &:checked + ${Label} {
+    border: 1px solid ${theme.colors.accent};
   }
 `;
 
 export const RadioButton = styled.input`
   cursor: pointer;
-  opacity: 0;
+  visibility: hidden;
   position: absolute;
 
   /* &:checked + label {
     border: 1px solid ${theme.colors.accent};
   } */
 
-  &:checked {
-    + ${Label} {
-      border: 1px solid ${theme.colors.accent};
-    }
+  &:checked + ${Label} {
+    border: 1px solid ${theme.colors.accent};
   }
 `;
