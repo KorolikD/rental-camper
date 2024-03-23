@@ -12,7 +12,7 @@ import { SvgCustom } from '../../components/SvgCustom/SvgCustom';
 // import Calendar from '../../components/Calendar/Calendar';
 import { ExampleCalendar } from '../../components/Calendar copy';
 import { BasicModalWindow } from '../../components/BasicModalWindow';
-import { VehicleEquipment } from '../../components/VehicleEquipment';
+import { Filters } from '../../components/Filters';
 // import { Calendar } from '../../components/Calendar/Calendar';
 console.log('🤬>>>  data:\n', data);
 
@@ -47,7 +47,7 @@ const FirstPage = () => {
         $width={'400px'}
         $height={'56px'}
       />
-      <LocationInput />
+
       <Categories camper={data[0]} />
       {/* // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
       <button onClick={toggleCalendar}>
@@ -79,7 +79,7 @@ const FirstPage = () => {
       </BasicModalWindow>
       <Button onClick={openModal}>Show more</Button>
       {/* //!!!!!!!!!!!!!!!!!!!! Vehicle equipment */}
-      <VehicleEquipment />
+      <Filters />
     </div>
   );
 };
