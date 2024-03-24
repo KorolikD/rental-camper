@@ -1,24 +1,27 @@
-import { DatePicker, ConfigProvider } from 'antd';
-import dayjs from 'dayjs';
-import { CalendarGlobalStyle, calendarTheme } from './Calendar.styled';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import DatePicker from 'react-datepicker';
 
-const DATE_FORMAT = 'DD/MM/YYYY';
+import 'react-datepicker/dist/react-datepicker.css';
+// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
-const Calendar = ({ date, setDate, minDate, maxDate, isOpen, setIsOpen }) => {
-  const formattedMinDate = minDate ? dayjs(minDate).format(DATE_FORMAT) : null;
-  const formattedMaxDate = maxDate ? dayjs(maxDate).format(DATE_FORMAT) : null;
+// !Підключення
+// const [isOpenCalendar, setIsOpenCalendar] = useState(false);
+// const toggleCalendar = () => {
+//   setIsOpenCalendar(!isOpenCalendar);
+// };
 
-  const onChangeDate = (newDate) => {
-    const formattedDate = newDate.format(DATE_FORMAT);
-    setDate(formattedDate);
-    setIsOpen(false);
-  };
+// <button onClick={toggleCalendar}>
+//   <SvgCustom icon={'calendar'} stroke={theme.colors.main} />
+// </button>
+// <Calendar isOpen={isOpenCalendar} ooBackClick={setIsOpenCalendar} />
+
+export const Calendar = ({ isOpen, ooBackClick }) => {
+  const [startDate, setStartDate] = useState(new Date());
 
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
-        setIsOpen(false);
+        ooBackClick(false);
       }
     }; // перевіряємо чи було натиснуто клавішу Escape
 
@@ -27,31 +30,27 @@ const Calendar = ({ date, setDate, minDate, maxDate, isOpen, setIsOpen }) => {
     return () => {
       document.removeEventListener('keydown', handleKeyDown); // видаляємо слухач
     };
-  }, [isOpen, setIsOpen]); // логіка закриття календаря по натисканні клавіші Escape
+  }, [isOpen, ooBackClick]); // логіка закриття календаря по натисканні клавіші Escape
 
+  const handleChange = (date) => setStartDate(date);
+
+  const handleDateSelect = (date) => {
+    console.log('🤬>>>  date:\n', date); //Дата яку ми вибрали
+    ooBackClick(false);
+  };
   return (
     <>
-      <ConfigProvider theme={calendarTheme}>
-        {isOpen && (
-          <DatePicker
-            allowClear={false}
-            format={DATE_FORMAT}
-            value={dayjs(date, DATE_FORMAT)}
-            defaultValue={dayjs(date, DATE_FORMAT)}
-            {...(formattedMaxDate && {
-              maxDate: dayjs(formattedMaxDate, DATE_FORMAT),
-            })}
-            {...(formattedMinDate && {
-              minDate: dayjs(formattedMinDate, DATE_FORMAT),
-            })}
-            onChange={onChangeDate}
-            open={isOpen}
-          />
-        )}
-      </ConfigProvider>
-      <CalendarGlobalStyle />
+      {isOpen && (
+        <DatePicker
+          selected={startDate}
+          onSelect={handleDateSelect}
+          onChange={handleChange}
+          inline
+          onClickOutside={() => {
+            ooBackClick(false);
+          }}
+        />
+      )}
     </>
   );
 };
-
-export default Calendar;

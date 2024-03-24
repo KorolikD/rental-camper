@@ -18,7 +18,6 @@ export const ListItem = styled.li`
   height: 44px;
 
   background-color: ${theme.colors.blockFeatures};
-  mix-blend-mode: multiply;
 `;
 
 export const Text = styled.p`

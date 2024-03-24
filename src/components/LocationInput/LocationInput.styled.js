@@ -31,7 +31,6 @@ export const Icon = styled.svg`
 
 export const Field = styled.input`
   padding: 18px 18px 18px 44px;
-  width: 360px;
   height: 56px;
 
   border: none;

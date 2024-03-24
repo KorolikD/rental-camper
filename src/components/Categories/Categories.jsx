@@ -1,7 +1,10 @@
-import { firstLetterToUpperCase } from '../../helpers/firstLetterToUpperCase';
+import { firstLetterToUpperCase } from '../../helpers';
 import { theme } from '../../styles';
-import { SvgCustom } from '../SvgCustom/SvgCustom';
+import { SvgCustom } from '../../components';
 import { CategoriesList, ListItem, Text } from './Categories.styled';
+
+// ! Підключення
+//  <Categories camper={campers[0]} />
 
 export const Categories = ({ camper }) => {
   const createTemplate = (camper) => {

@@ -10,22 +10,21 @@
 // };
 
 //!_____________________ Рендер модального вікна.
+
 // <BasicModalWindow isOpen={modalIsOpen} onRequestClose={closeModal}>
 {
   /* Контент */
 }
-// </BasicModalWindow>;
-
+// </BasicModalWindow>
 // ! _____________________ Кнопка відкриття модального вікна
-//  <Button onClick={openModal}></Button>
-
-import { SvgCustom } from '../SvgCustom/SvgCustom';
+// <Button onClick={openModal}>Show more</Button>
 
 import { CloseModalBtn } from './BasicModalWindow.styled';
 import './BasicModalWindow.css';
 
 import { Modal } from 'antd';
 import { theme } from '../../styles';
+import { SvgCustom } from '../../components';
 
 export const BasicModalWindow = ({ isOpen, onRequestClose, children }) => {
   return (

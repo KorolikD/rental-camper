@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { theme } from '../../styles';
 
+export const Form = styled.form`
+  width: 364px;
+`;
+
 export const BlockTitle = styled.h3`
   margin-top: 32px;
   margin-bottom: 14px;
@@ -36,7 +40,7 @@ export const Title = styled.h4`
 export const FormBlockWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 `;
 
 export const Label = styled.label`
@@ -58,16 +62,13 @@ export const Label = styled.label`
   font-size: ${theme.fontSizes.small};
   line-height: 125%;
   color: ${theme.colors.main};
+
+  transition: ${`border ${theme.animation.cubicBezier}`};
 `;
 
 export const Checkbox = styled.input`
-  cursor: pointer;
   visibility: hidden;
   position: absolute;
-
-  /* &:checked + label {
-    border: 1px solid ${theme.colors.accent};
-  } */
 
   &:checked + ${Label} {
     border: 1px solid ${theme.colors.accent};
@@ -75,13 +76,8 @@ export const Checkbox = styled.input`
 `;
 
 export const RadioButton = styled.input`
-  cursor: pointer;
   visibility: hidden;
   position: absolute;
-
-  /* &:checked + label {
-    border: 1px solid ${theme.colors.accent};
-  } */
 
   &:checked + ${Label} {
     border: 1px solid ${theme.colors.accent};

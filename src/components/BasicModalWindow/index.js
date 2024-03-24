@@ -1,1 +1,0 @@
-export { BasicModalWindow } from './BasicModalWindow';
