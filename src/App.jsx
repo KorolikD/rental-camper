@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { SharedLayout } from './components';
+import { Features, Reviews, SharedLayout } from './components';
 import { lazy } from 'react';
 // import { Catalog, Favorites, Home } from './pages';
 
@@ -12,11 +12,12 @@ function App() {
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
-        <Route path="catalog" element={<Catalog />} />
-        {/* <Route path="movies/:movieId" element={<MovieDetails />}>
-            <Route path="cast" element={<Cast />} />
-            <Route path="reviews" element={<Reviews />} />
-          </Route> */}
+
+        <Route path="catalog" element={<Catalog />}>
+          <Route path="features" element={<Features />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
+
         <Route path="favorites" element={<Favorites />} />
 
         <Route path="*" element={<Home />} />

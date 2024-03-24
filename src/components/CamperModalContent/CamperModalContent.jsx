@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router-dom';
 import { theme } from '../../styles';
 import { SvgCustom } from '../SvgCustom/SvgCustom';
 import {
@@ -5,6 +6,8 @@ import {
   DescriptionText,
   Gallery,
   Image,
+  LinkWrapper,
+  NavLink,
   Price,
   RatingLocationWrapper,
   ReviewText,
@@ -82,6 +85,13 @@ export const CamperModalContent = ({ camperData }) => {
       </Gallery>
 
       <DescriptionText>{description}</DescriptionText>
+
+      <LinkWrapper>
+        <NavLink to={'features'}>Features</NavLink>
+        <NavLink to={'reviews'}>Reviews</NavLink>
+      </LinkWrapper>
+
+      <Outlet />
     </ContentWrapper>
   );
 };

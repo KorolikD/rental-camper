@@ -13,8 +13,8 @@ export const NavigateLink = styled(NavLink)`
   text-align: center;
   color: ${theme.colors.main};
   cursor: pointer;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: ${theme.fontSizes.small};
+  font-weight: 600;
   min-width: 80px;
 
   &.active {

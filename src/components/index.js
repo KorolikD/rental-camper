@@ -14,3 +14,5 @@ export * from './Loader/Loader.jsx';
 export * from './LocationInput/LocationInput.jsx';
 export * from './SharedLayout/SharedLayout.jsx';
 export * from './SvgCustom/SvgCustom.jsx';
+export * from './Features/Features.jsx';
+export * from './Reviews/Reviews.jsx';

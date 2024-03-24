@@ -24,14 +24,12 @@ export const Title = styled.h4`
   margin-bottom: 48px;
 
   &::before {
-    position: absolute;
     content: '';
+    position: absolute;
     height: 1px;
     width: 100%;
     background-color: ${theme.colors.horizontalLine};
 
-    content: '';
-    position: absolute;
     top: 100%;
     transform: translateY(24px);
   }

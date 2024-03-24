@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { firstLetterToUpperCase } from '../../helpers';
 import { theme } from '../../styles';
 import {
@@ -27,6 +27,10 @@ import {
 
 export const CamperItem = ({ camperData }) => {
   const [modalIsOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    console.log('modalIsOpen', modalIsOpen);
+  }, [modalIsOpen]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -177,7 +181,6 @@ export const CamperItem = ({ camperData }) => {
               </CategoriesListItem>
             )}
           </CategoriesList>
-
           <Button onClick={openModal}>Show more</Button>
         </ContentWrapper>
       </ListItem>

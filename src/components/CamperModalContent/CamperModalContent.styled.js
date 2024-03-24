@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../../styles';
+import { NavLink as Link } from 'react-router-dom';
 
 export const ContentWrapper = styled.div`
   display: flex;
@@ -74,6 +75,54 @@ export const DescriptionText = styled.p`
   width: 100%;
 
   color: ${theme.colors.main};
+`;
+
+export const LinkWrapper = styled.div`
+  position: relative;
+  display: flex;
+  gap: 40px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: ${theme.colors.horizontalLine};
+
+    top: 100%;
+    transform: translateY(-1px);
+  }
+`;
+
+export const NavLink = styled(Link)`
+  display: block;
+  padding-bottom: 24px;
+  cursor: pointer;
+  position: relative;
+
+  font-weight: 600;
+  font-size: ${theme.fontSizes.medium};
+  line-height: 120%;
+  color: ${theme.colors.main};
+
+  &.active::after {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(-3px);
+
+    background-color: ${theme.colors.accent};
+  }
+
+  transition: ${`color ${theme.animation.cubicBezier}`};
+
+  &:hover {
+    color: ${theme.colors.buttonHover};
+  }
 `;
 // !!!!!!!!!!!!!!!!!!!!!!!!!
 
