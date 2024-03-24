@@ -15,15 +15,17 @@ export const Input = ({
   placeholder,
   $width = '360px',
   $height = '56px',
+  style,
 }) => {
   return (
-    <FormGroup htmlFor={name}>
+    <FormGroup htmlFor="">
       <Field
         type={type}
         name={name}
         placeholder={placeholder}
         $width={$width}
         $height={$height}
+        style={style}
       />
     </FormGroup>
   );

@@ -1,20 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../../styles';
 
-export const FeaturesWrapper = styled.div`
-  display: flex;
-  width: 902px;
-  gap: 24px;
-`;
-
-export const FirstColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 430px;
-
-  gap: 44px;
-`;
-
 export const Title = styled.h4`
   font-weight: 600;
   font-size: 20px;
@@ -37,18 +23,4 @@ export const Title = styled.h4`
     top: 100%;
     transform: translateY(24px);
   }
-`;
-
-export const FormBlockWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-`;
-
-export const SecondColumn = styled.div`
-  display: flex;
-  border: 1px solid ${theme.colors.border};
-  border-radius: ${theme.radii.sm};
-  padding: 24px;
-  width: 448px;
 `;

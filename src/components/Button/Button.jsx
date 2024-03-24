@@ -1,8 +1,8 @@
 import { StyledButton } from './Button.styled';
 
-export const Button = ({ children, onClick, style }) => {
+export const Button = ({ children, onClick, style, type }) => {
   return (
-    <StyledButton style={{ ...style }} onClick={onClick}>
+    <StyledButton type={type} style={{ ...style }} onClick={onClick}>
       {children}
     </StyledButton>
   );

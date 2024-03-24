@@ -1,56 +1,48 @@
-// import { Outlet } from 'react-router-dom';
 import { theme } from '../../styles';
 import { SvgCustom } from '../SvgCustom/SvgCustom';
 import {
   ContentWrapper,
   DescriptionText,
+  FirstColumn,
   Gallery,
   Image,
   LinkWrapper,
   ModalNavigate,
-  // NavLink,
   Price,
   RadioButton,
   RatingLocationWrapper,
   ReviewText,
+  SecondColumn,
   SvgTextWrapper,
   Text,
   Title,
   TitleWrapper,
+  UnderLinkContentWrapper,
 } from './CamperModalContent.styled';
-import { useState } from 'react';
-import { Features, Reviews } from '../../components';
+import { useEffect, useRef, useState } from 'react';
+import { CamperBookingForm, Features, Reviews } from '../../components';
 
 export const CamperModalContent = ({ camperData }) => {
-  const [checkedButton, setCheckedButton] = useState('features');
-  const {
-    // _id,
-    // adults,
-    // transmission,
-    // engine,
-    name,
-    gallery,
-    price,
-    rating,
-    reviews,
-    location,
-    description,
-    // details: {
-    //   airConditioner,
-    //   kitchen,
-    //   beds,
-    // CD,
-    // TV,
-    // radio,
-    // hob,
-    // toilet,
-    // shower,
-    // freezer,
-    // gas,
-    // water,
-    // microwave,
-    // },
-  } = camperData;
+  const [checkedButton, setCheckedButton] = useState('');
+  const { name, gallery, price, rating, reviews, location, description } =
+    camperData;
+
+  const featuresButtonRef = useRef(null);
+  const reviewsButtonRef = useRef(null);
+
+  useEffect(() => {
+    setCheckedButton('features');
+  }, []);
+
+  useEffect(() => {
+    checkedButton === 'features'
+      ? (featuresButtonRef.current.checked = true)
+      : (featuresButtonRef.current.checked = false);
+
+    checkedButton === 'reviews'
+      ? (reviewsButtonRef.current.checked = true)
+      : (reviewsButtonRef.current.checked = false);
+  }, [checkedButton]);
 
   const handleButtonCheck = (event) => {
     setCheckedButton(event.target.value);
@@ -96,10 +88,8 @@ export const CamperModalContent = ({ camperData }) => {
       <DescriptionText>{description}</DescriptionText>
 
       <LinkWrapper>
-        {/* <NavLink to={'features'}>Features</NavLink>
-        <NavLink to={'reviews'}>Reviews</NavLink> */}
-        {/* <Outlet /> */}
         <RadioButton
+          ref={featuresButtonRef}
           type="radio"
           name="modal-navigate"
           id="modal-navigate-features"
@@ -111,6 +101,7 @@ export const CamperModalContent = ({ camperData }) => {
         </ModalNavigate>
 
         <RadioButton
+          ref={reviewsButtonRef}
           type="radio"
           name="modal-navigate"
           id="modal-navigate-reviews"
@@ -120,8 +111,15 @@ export const CamperModalContent = ({ camperData }) => {
         <ModalNavigate htmlFor="modal-navigate-reviews">Reviews</ModalNavigate>
       </LinkWrapper>
 
-      {checkedButton === 'features' && <Features camperData={camperData} />}
-      {checkedButton === 'reviews' && <Reviews camperData={camperData} />}
+      <UnderLinkContentWrapper>
+        <FirstColumn>
+          {checkedButton === 'features' && <Features camperData={camperData} />}
+          {checkedButton === 'reviews' && <Reviews camperData={camperData} />}
+        </FirstColumn>
+        <SecondColumn>
+          <CamperBookingForm />
+        </SecondColumn>
+      </UnderLinkContentWrapper>
     </ContentWrapper>
   );
 };

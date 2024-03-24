@@ -163,6 +163,7 @@ export const RadioButton = styled.input`
     background-color: ${theme.colors.accent};
 
     transition: ${`all ${theme.animation.cubicBezier}`};
+    z-index: 1;
   }
 
   &:hover + ${ModalNavigate} {
@@ -170,32 +171,26 @@ export const RadioButton = styled.input`
   }
 `;
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!
-
-export const CategoriesList = styled.ul`
+export const UnderLinkContentWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  width: 902px;
+  gap: 24px;
 `;
 
-export const CategoriesListItem = styled.li`
+export const FirstColumn = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  flex-direction: column;
+  width: 430px;
 
-  border-radius: ${theme.radii.xl};
-  padding: 12px 18px;
-  height: 44px;
-
-  background-color: ${theme.colors.blockFeatures};
+  gap: 44px;
 `;
 
-export const CategoriesItemText = styled.p`
-  font-weight: 500;
-  font-size: ${theme.fontSizes.small};
-  line-height: 125%;
-  text-align: center;
-
-  color: ${theme.colors.main};
+export const SecondColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid ${theme.colors.border};
+  border-radius: ${theme.radii.sm};
+  padding: 24px;
+  width: 448px;
+  height: max-content;
 `;

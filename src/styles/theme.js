@@ -8,6 +8,7 @@ export const theme = Object.freeze({
     text: '#475467',
 
     scroll: '#d9d9d9',
+    scrollHover: '#cacaca',
 
     inputs: '#f7f7f7',
     inputPlaceholderText: 'rgba(16, 24, 40, 0.6)',

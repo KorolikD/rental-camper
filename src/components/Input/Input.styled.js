@@ -32,6 +32,7 @@ export const Field = styled.input`
 export const FormGroup = styled.label`
   display: flex;
   flex-direction: column;
+
   gap: 8px;
 
   font-family: ${theme.fonts.mainFont};
