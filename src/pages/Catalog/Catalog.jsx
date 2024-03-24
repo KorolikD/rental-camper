@@ -19,7 +19,7 @@ const Catalog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [items, setItems] = useState([]);
 
-  const { campers, isLoading } = useSelector(selectCampers);
+  const { campersData, isLoading } = useSelector(selectCampers);
 
   const dispatch = useDispatch();
 
@@ -30,9 +30,9 @@ const Catalog = () => {
   useEffect(() => {
     setItems((prevItems) => [
       ...prevItems,
-      ...campers.slice(currentPage * limit - limit, currentPage * limit),
+      ...campersData.slice(currentPage * limit - limit, currentPage * limit),
     ]);
-  }, [currentPage, limit, campers]);
+  }, [currentPage, limit, campersData]);
 
   const handleLoadMore = () => {
     setCurrentPage(currentPage + 1);
@@ -44,10 +44,10 @@ const Catalog = () => {
 
       <ContentWrapper>
         {isLoading && <Loader />}
-        {campers.length > 0 && (
+        {campersData.length > 0 && (
           <CamperCardsWrapper>
             <CamperCards campers={items} />
-            {currentPage * limit < campers.length && (
+            {currentPage * limit < campersData.length && (
               <ButtonLoadMore onClick={handleLoadMore} />
             )}
           </CamperCardsWrapper>

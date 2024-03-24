@@ -24,9 +24,17 @@ import {
   Title,
   TitleWrapper,
 } from './CamperItem.styled';
+import { useDispatch } from 'react-redux';
+import { toggleFavorite } from '../../redux/campersSlice';
 
 export const CamperItem = ({ camperData }) => {
   const [modalIsOpen, setIsModalOpen] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const handleFavoriteButtonClick = () => {
+    dispatch(toggleFavorite(camperData));
+  };
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -66,12 +74,14 @@ export const CamperItem = ({ camperData }) => {
               <Title>{name}</Title>
               <PriceWrapper>
                 <Price>{`€${price}.00`}</Price>
-                <SvgCustom
-                  icon={'heart'}
-                  height={24}
-                  width={24}
-                  stroke={theme.colors.main}
-                />
+                <button onClick={handleFavoriteButtonClick}>
+                  <SvgCustom
+                    icon={'heart'}
+                    height={24}
+                    width={24}
+                    stroke={theme.colors.main}
+                  />
+                </button>
               </PriceWrapper>
             </TitleWrapper>
 
