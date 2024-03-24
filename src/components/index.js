@@ -16,3 +16,4 @@ export * from './SharedLayout/SharedLayout.jsx';
 export * from './SvgCustom/SvgCustom.jsx';
 export * from './Features/Features.jsx';
 export * from './Reviews/Reviews.jsx';
+export * from './VehicleDetails/VehicleDetails.jsx';

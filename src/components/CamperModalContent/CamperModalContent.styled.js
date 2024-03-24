@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 import { theme } from '../../styles';
-import { NavLink as Link } from 'react-router-dom';
+// import { NavLink as Link } from 'react-router-dom';
 
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 902px;
-  gap: 24px;
+`;
+
+export const TitleWrapper = styled.div`
+  margin-bottom: 24px;
 `;
 
 export const Title = styled.h3`
@@ -57,6 +60,7 @@ export const Price = styled.p`
 export const Gallery = styled.div`
   display: flex;
   gap: 16px;
+  margin-bottom: 24px;
 `;
 
 export const Image = styled.img`
@@ -75,14 +79,17 @@ export const DescriptionText = styled.p`
   width: 100%;
 
   color: ${theme.colors.main};
+
+  margin-bottom: 44px;
 `;
 
 export const LinkWrapper = styled.div`
   position: relative;
   display: flex;
   gap: 40px;
+  margin-bottom: 44px;
 
-  &::before {
+  &::after {
     content: '';
     position: absolute;
     height: 1px;
@@ -94,7 +101,38 @@ export const LinkWrapper = styled.div`
   }
 `;
 
-export const NavLink = styled(Link)`
+// export const NavLink = styled(Link)`
+//   display: block;
+//   padding-bottom: 24px;
+//   cursor: pointer;
+//   position: relative;
+
+//   font-weight: 600;
+//   font-size: ${theme.fontSizes.medium};
+//   line-height: 120%;
+//   color: ${theme.colors.main};
+
+//   &.active::after {
+//     content: '';
+//     display: block;
+//     height: 5px;
+//     width: 100%;
+//     position: absolute;
+//     top: 100%;
+//     left: 0;
+//     transform: translateY(-3px);
+
+//     background-color: ${theme.colors.accent};
+//   }
+
+//   transition: ${`color ${theme.animation.cubicBezier}`};
+
+//   &:hover {
+//     color: ${theme.colors.buttonHover};
+//   }
+// `;
+
+export const ModalNavigate = styled.label`
   display: block;
   padding-bottom: 24px;
   cursor: pointer;
@@ -105,7 +143,14 @@ export const NavLink = styled(Link)`
   line-height: 120%;
   color: ${theme.colors.main};
 
-  &.active::after {
+  transition: ${`all ${theme.animation.cubicBezier}`};
+`;
+
+export const RadioButton = styled.input`
+  visibility: hidden;
+  position: absolute;
+
+  &:checked + ${ModalNavigate}::after {
     content: '';
     display: block;
     height: 5px;
@@ -116,14 +161,15 @@ export const NavLink = styled(Link)`
     transform: translateY(-3px);
 
     background-color: ${theme.colors.accent};
+
+    transition: ${`all ${theme.animation.cubicBezier}`};
   }
 
-  transition: ${`color ${theme.animation.cubicBezier}`};
-
-  &:hover {
+  &:hover + ${ModalNavigate} {
     color: ${theme.colors.buttonHover};
   }
 `;
+
 // !!!!!!!!!!!!!!!!!!!!!!!!!
 
 export const CategoriesList = styled.ul`

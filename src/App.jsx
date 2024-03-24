@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import { Features, Reviews, SharedLayout } from './components';
+import { SharedLayout } from './components';
+// import { Features, Reviews, SharedLayout } from './components';
 import { lazy } from 'react';
 // import { Catalog, Favorites, Home } from './pages';
 
@@ -14,8 +15,8 @@ function App() {
         <Route index element={<Home />} />
 
         <Route path="catalog" element={<Catalog />}>
-          <Route path="features" element={<Features />} />
-          <Route path="reviews" element={<Reviews />} />
+          {/* <Route path="features" element={<Features />} />
+          <Route path="reviews" element={<Reviews />} /> */}
         </Route>
 
         <Route path="favorites" element={<Favorites />} />

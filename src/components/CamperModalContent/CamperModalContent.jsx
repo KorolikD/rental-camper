@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 import { theme } from '../../styles';
 import { SvgCustom } from '../SvgCustom/SvgCustom';
 import {
@@ -7,17 +7,22 @@ import {
   Gallery,
   Image,
   LinkWrapper,
-  NavLink,
+  ModalNavigate,
+  // NavLink,
   Price,
+  RadioButton,
   RatingLocationWrapper,
   ReviewText,
   SvgTextWrapper,
   Text,
   Title,
+  TitleWrapper,
 } from './CamperModalContent.styled';
+import { useState } from 'react';
+import { Features, Reviews } from '../../components';
 
 export const CamperModalContent = ({ camperData }) => {
-  console.log('🤬>>>  camperData:\n', camperData);
+  const [checkedButton, setCheckedButton] = useState('features');
   const {
     // _id,
     // adults,
@@ -47,9 +52,13 @@ export const CamperModalContent = ({ camperData }) => {
     // },
   } = camperData;
 
+  const handleButtonCheck = (event) => {
+    setCheckedButton(event.target.value);
+  };
+
   return (
     <ContentWrapper>
-      <div>
+      <TitleWrapper>
         <Title>{name}</Title>
 
         <RatingLocationWrapper>
@@ -74,7 +83,7 @@ export const CamperModalContent = ({ camperData }) => {
         </RatingLocationWrapper>
 
         <Price>{`€${price}.00`}</Price>
-      </div>
+      </TitleWrapper>
 
       <Gallery>
         {gallery.map((item, idx) => (
@@ -87,11 +96,32 @@ export const CamperModalContent = ({ camperData }) => {
       <DescriptionText>{description}</DescriptionText>
 
       <LinkWrapper>
-        <NavLink to={'features'}>Features</NavLink>
-        <NavLink to={'reviews'}>Reviews</NavLink>
+        {/* <NavLink to={'features'}>Features</NavLink>
+        <NavLink to={'reviews'}>Reviews</NavLink> */}
+        {/* <Outlet /> */}
+        <RadioButton
+          type="radio"
+          name="modal-navigate"
+          id="modal-navigate-features"
+          value="features"
+          onClick={handleButtonCheck}
+        />
+        <ModalNavigate htmlFor="modal-navigate-features">
+          Features
+        </ModalNavigate>
+
+        <RadioButton
+          type="radio"
+          name="modal-navigate"
+          id="modal-navigate-reviews"
+          value="reviews"
+          onClick={handleButtonCheck}
+        />
+        <ModalNavigate htmlFor="modal-navigate-reviews">Reviews</ModalNavigate>
       </LinkWrapper>
 
-      <Outlet />
+      {checkedButton === 'features' && <Features camperData={camperData} />}
+      {checkedButton === 'reviews' && <Reviews camperData={camperData} />}
     </ContentWrapper>
   );
 };

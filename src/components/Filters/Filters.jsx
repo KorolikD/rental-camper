@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { theme } from '../../styles';
 import {
   Title,
@@ -17,7 +17,9 @@ export const Filters = () => {
   const [kitchen, setKitchen] = useState(false);
   const [tv, setTv] = useState(false);
   const [showerWC, setShowerWC] = useState(false);
-  const [radioButton, setRadioButton] = useState(null);
+  const [setRadioButton] = useState(null);
+
+  // const [radioButton, setRadioButton] = useState(null);
 
   // useEffect(() => {
   //   console.log('🤬>>>  radioButton:\n', radioButton);
@@ -25,6 +27,10 @@ export const Filters = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
+
+  const handleButtonCheck = (event) => {
+    setRadioButton(event.target.value);
   };
 
   return (
@@ -140,9 +146,7 @@ export const Filters = () => {
       <FormBlockWrapper>
         <RadioButton
           type="radio"
-          onChange={(event) => {
-            setRadioButton(event.target.value);
-          }}
+          onChange={handleButtonCheck}
           id="vehicle-type-van"
           name="vehicle-type"
           value="van"
@@ -159,9 +163,7 @@ export const Filters = () => {
 
         <RadioButton
           type="radio"
-          onChange={(event) => {
-            setRadioButton(event.target.value);
-          }}
+          onChange={handleButtonCheck}
           id="vehicle-type-fully-integrated"
           name="vehicle-type"
           value="fully-integrated"
@@ -182,9 +184,7 @@ export const Filters = () => {
 
         <RadioButton
           type="radio"
-          onChange={(event) => {
-            setRadioButton(event.target.value);
-          }}
+          onChange={handleButtonCheck}
           id="vehicle-type-alcove"
           name="vehicle-type"
           value="alcove"
