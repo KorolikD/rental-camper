@@ -7,7 +7,7 @@ export const SvgWrap = styled.svg`
   width: ${({ $width }) => `${$width}px`};
   height: ${({ $height }) => `${$height}px`};
 
-  transition: ${`stroke ${theme.animation.cubicBezier}`};
+  transition: ${`all ${theme.animation.cubicBezier}`};
 
   &:hover,
   &:focus {

@@ -12,14 +12,15 @@ import {
 } from './Catalog.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampers } from '../../redux/operators';
-import { selectCampers } from '../../redux/selectors';
+import { selectCampersData, selectIsLoading } from '../../redux/selectors';
 
 const Catalog = () => {
   const [limit] = useState(4);
   const [currentPage, setCurrentPage] = useState(1);
   const [items, setItems] = useState([]);
 
-  const { campersData, isLoading } = useSelector(selectCampers);
+  const campersData = useSelector(selectCampersData);
+  const isLoading = useSelector(selectIsLoading);
 
   const dispatch = useDispatch();
 

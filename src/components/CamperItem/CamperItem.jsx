@@ -24,11 +24,13 @@ import {
   Title,
   TitleWrapper,
 } from './CamperItem.styled';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavorite } from '../../redux/campersSlice';
+import { selectFavorites } from '../../redux/selectors';
 
 export const CamperItem = ({ camperData }) => {
   const [modalIsOpen, setIsModalOpen] = useState(false);
+  const favorites = useSelector(selectFavorites);
 
   const dispatch = useDispatch();
 
@@ -79,7 +81,16 @@ export const CamperItem = ({ camperData }) => {
                     icon={'heart'}
                     height={24}
                     width={24}
-                    stroke={theme.colors.main}
+                    stroke={() =>
+                      favorites.some((el) => el._id === _id)
+                        ? theme.colors.button
+                        : theme.colors.main
+                    }
+                    color={() =>
+                      favorites.some((el) => el._id === _id)
+                        ? theme.colors.button
+                        : 'transparent'
+                    }
                   />
                 </button>
               </PriceWrapper>

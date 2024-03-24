@@ -1,8 +1,5 @@
-import { createSelector } from 'reselect';
+export const selectCampersData = (state) => state.campers.campersData;
 
-export const selectCampers = (state) => state.campers;
+export const selectIsLoading = (state) => state.campers.isLoading;
 
-export const selectCampersMemo = createSelector(
-  [selectCampers],
-  (campers) => campers
-);
+export const selectFavorites = (state) => state.campers.favorites;
