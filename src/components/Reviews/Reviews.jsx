@@ -2,6 +2,7 @@ import { theme } from '../../styles';
 import { SvgCustom } from '../SvgCustom/SvgCustom';
 import {
   ListItem,
+  ReviewText,
   ReviewsList,
   StarsWrapper,
   UserFirstLetter,
@@ -42,7 +43,7 @@ export const Reviews = ({ camperData }) => {
                 <StarsWrapper>{icons}</StarsWrapper>
               </UserWrapper>
             </UserInfoWrapper>
-            <p>{comment}</p>
+            <ReviewText>{comment}</ReviewText>
           </ListItem>
         );
       }

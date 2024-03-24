@@ -1,108 +1,64 @@
-# React + Vite template
+[UA](https://github.com/KorolikD/rental-camper/blob/main/README.uk.md)
 
-Цей проєкт було створено за допомогою [Create Vite](https://vitejs.dev/). Для
-знайомства і налаштування додаткових можливостей
-[звернися до документації](https://vitejs.dev/guide/).
+# CamperRentalUA <img align="center" width="32" height="32" src="./public/favicon.ico">
 
-## Створення репозиторію за шаблоном
+Introducing CamperRentalUA - Our project is a convenient and easy-to-use web
+service for renting camper vans in Ukraine, which allows you to travel and
+discover new places without restrictions, without having your own car.
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення
-репозиторію свого проєкту. Для цього натисни на кнопку `"Use this template"` і
-обери опцію `"Create a new repository"`, як показано на зображенні.
+**So, hit on the open road with our app and find your perfect campervan for an
+unforgettable trip**
 
-![Creating repo from a template step 1](./src/assets/template-step-1.png)
+## 🔧 Main features:
 
-На наступному кроці відкриється сторінка створення нового репозиторію. Заповни
-поле його імені, переконайся що репозиторій публічний, після чого натисни кнопку
-`"Create repository from template"`.
+1. **A wide range of campers of different types and sizes:** The app offers a
+   wide range of campervans of different types to suit different needs and
+   requirements of users.
+2. **Online campervan booking:** The user can easily and quickly book a
+   campervan using the app by specifying dates and other necessary parameters.
+3. **Simple user interface:** The app has a clear and user-friendly interface
+   that makes it easy to use all its features.
+4. **Ability to view reviews and rating of each camper:** Users can view the
+   reviews and ratings of each camper to make an informed choice when renting.
+5. **Informative page with a description of each camper:** Each camper has its
+   own page with a detailed description, photos, and features to help users make
+   the right choice.
 
-![Creating repo from a template step 2](./src/assets/template-step-2.png)
+## 👨‍💻 Developer:
 
-Після того як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як показано
-на зображенні.
+[![Dmytro Korolik](https://img.shields.io/badge/git_hub-262625?style=for-the-badge&logo=github&logoColor=white)](https://github.com/KorolikD)
+**Dmytro Korolik** - FullStack Developer
 
-![Settings GitHub Actions permissions step 1](./src/assets/gh-actions-perm-1.png)
+## 🛠 Tech Stack
 
-Проскроливши сторінку до самого кінця, у секції `"Workflow permissions"` вибери
-опцію `"Read and write permissions"` і постав галочку в чекбоксі. Це необхідно
-для автоматизації процесу деплою проєкту.
+**Frontend side**
 
-![Settings GitHub Actions permissions step 2](./src/assets/gh-actions-perm-2.png)
+[![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/-React-blue?logo=react&logoColor=white)](https://reactjs.org/)
+[![react-router-dom](https://img.shields.io/badge/-react--router--dom-CA4245?logo=react-router&logoColor=white)](https://reactrouter.com/)
+[![Redux & Redux Toolkit](https://img.shields.io/badge/-Redux%20%26%20Redux%20Toolkit-764ABC?logo=redux&logoColor=white)](https://redux.js.org/)
+[![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![HTML & CSS](https://img.shields.io/badge/-HTML%20%26%20CSS-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![axios](https://img.shields.io/badge/-axios-009688?logo=axios&logoColor=white)](https://axios-http.com/)
+[![StyledComponents](https://img.shields.io/badge/-StyledComponents-DB7093?logo=styled-components&logoColor=white)](https://styled-components.com/)
+[![Ant Design](https://img.shields.io/badge/-Ant_Design-0170FE?logo=ant-design&logoColor=white)](https://ant.design/)
 
-Тепер у тебе є особистий репозиторій проєкту, зі структурою файлів і папок
-репозиторія-шаблону. Далі працюй з ним як з будь-яким іншим особистим
-репозиторієм, клонуй його собі на комп'ютер, пиши код, роби комміти і відправляй
-їх на GitHub.
+<!-- [![Formik](https://img.shields.io/badge/-Formik-F49C20?logo=formik&logoColor=white)](https://formik.org/) -->
+<!--
+**Backend side**
 
-## Підготовка до роботи
+[![mockapi](https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white)](https://mockapi.io/) -->
 
-1. Переконайся, що на комп'ютері встановлена LTS-версія Node.js.
-   [Скачай і встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встановіть базові залежності проекту командою `npm install`.
-3. Запустіть режим розробки, виконавши команду `npm run dev`.
-4. Перейди в браузері за адресою, що зазначено в терміналі.
+## ⚙️ Settings
 
-## Деплой
+To install project use command:
 
-Продакшн версія проєкту буде автоматично збиратися і деплоїтися на GitHub Pages,
-у гілку `gh-pages`, щоразу, коли оновлюється гілка `main`. Наприклад, після
-прямого пушу або прийнятого пул-реквесту. Для цього необхідно у файлі
-`vite.config.js` відредагувати поле `base`, замінивши `react_vite` на свою назву
-репозиторію `"/your_repo_name"`, і відправити зміни на GitHub.
-
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) і
-виставити роздачу продакшн версії файлів із папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
-
-![GitHub Pages settings](./src/assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
-
-- **Жовтий колір** - виконується збірка і деплой проєкту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час збирання або деплою сталася помилка.
-
-Детальнішу інформацію про статус можна подивитися, клікнувши на іконку, і в
-випадаючому вікні перейти за посиланням `Details`.
-
-![Deployment status](./src/assets/deploy-status.png)
-
-### Жива сторінка
-
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися за
-адресою, вказаною в налаштуваннях GitHub-репозиторію (`Settings` > `Pages`).
-
-![GitHub-pages URL](./src/assets/gh-pages-url.png)
-
-Якщо відкривається порожня сторінка, переконайся що у вкладці `Console` немає
-помилок пов'язаних із неправильними шляхами до CSS і JS файлів проекту
-(**404**). Швидше за все найімовірніше, у тебе неправильне значення поля `base`
-у файлі `vite.config.js`.
-
-### Маршрутизація
-
-Якщо додаток використовує бібліотеку `react-router-dom` для маршрутизації,
-необхідно додатково налаштувати компонент `<BrowserRouter>`, передавши в пропе
-`basename` точну назву твого репозиторію. Слеш на початку рядка обов'язковий.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
+```bash
+  npm install
 ```
-### Додавання змінних в  .env
-Для зберігання конфігураційних даних, таких як API ключі, адреси серверів, порти та інші змінні використовуйте файл `.env`. Для цього необхідно з назви файлу `.env.template` видалити зайві ".template",після чого файл відповідатиме умовам файлу `.ignore` і буде зберігатися лише локально, не публікуючись на віддаленому репозиторії з метою безпеки. Задля використання змінних на GitHub-pages усі змінні, передбачені файлом .env, слід додати до файлу `.github/workflows/deploy.yml`, а також до налаштувань репозиторію. Для цього слід перейти (`Settings` > `Secrets and variables` > `Actions`)
 
-![Add enviroments from .env](./src/assets/secrets.png)
+To run development mode use command:
 
-## Як це працює
-
-1. Після кожного пушу в гілку `main` GitHub-репозиторію, запускається
-   спеціальний скрипт (GitHub Action) з файлу `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проєкт ініціалізується і
-   проходить збірку перед деплоєм. 3 Якщо всі кроки пройшли успішно, зібрана
-   продакшн-версія файлів проєкту відправляється в гілку `gh-pages`. В іншому
-   випадку, в логах виконання скрипта буде вказано в чому проблема.
+```bash
+  npm run dev
+```

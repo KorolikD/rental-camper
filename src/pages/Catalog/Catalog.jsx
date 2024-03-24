@@ -5,43 +5,34 @@ import {
   Loader,
   ButtonLoadMore,
 } from '../../components/';
-import { getAllCampers } from '../../utils';
 import {
   CamperCardsWrapper,
   ContentWrapper,
   PageWrapper,
 } from './Catalog.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCampers } from '../../redux/operators';
+import { selectCampers } from '../../redux/selectors';
 
 const Catalog = () => {
-  const [campersData, setCampersData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
   const [limit] = useState(4);
   const [currentPage, setCurrentPage] = useState(1);
   const [items, setItems] = useState([]);
 
+  const { campers, isLoading } = useSelector(selectCampers);
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    const getCampers = async () => {
-      try {
-        setIsLoading(true);
-        const response = await getAllCampers();
-        console.log('🤬>>>  response:\n', response);
-        setCampersData(response);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    getCampers();
-  }, []);
+    dispatch(fetchCampers());
+  }, [dispatch]);
 
   useEffect(() => {
     setItems((prevItems) => [
       ...prevItems,
-      ...campersData.slice(currentPage * limit - limit, currentPage * limit),
+      ...campers.slice(currentPage * limit - limit, currentPage * limit),
     ]);
-  }, [currentPage, limit, campersData]);
+  }, [currentPage, limit, campers]);
 
   const handleLoadMore = () => {
     setCurrentPage(currentPage + 1);
@@ -53,10 +44,10 @@ const Catalog = () => {
 
       <ContentWrapper>
         {isLoading && <Loader />}
-        {campersData.length > 0 && (
+        {campers.length > 0 && (
           <CamperCardsWrapper>
             <CamperCards campers={items} />
-            {currentPage * limit < campersData.length && (
+            {currentPage * limit < campers.length && (
               <ButtonLoadMore onClick={handleLoadMore} />
             )}
           </CamperCardsWrapper>

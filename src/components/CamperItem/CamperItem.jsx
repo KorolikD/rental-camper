@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { firstLetterToUpperCase } from '../../helpers';
 import { theme } from '../../styles';
 import {
@@ -28,10 +28,6 @@ import {
 export const CamperItem = ({ camperData }) => {
   const [modalIsOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    console.log('modalIsOpen', modalIsOpen);
-  }, [modalIsOpen]);
-
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -52,21 +48,7 @@ export const CamperItem = ({ camperData }) => {
     reviews,
     location,
     description,
-    details: {
-      airConditioner,
-      kitchen,
-      beds,
-      // CD,
-      // TV,
-      // radio,
-      // hob,
-      // toilet,
-      // shower,
-      // freezer,
-      // gas,
-      // water,
-      // microwave,
-    },
+    details: { airConditioner, kitchen, beds },
   } = camperData;
 
   return (
@@ -186,15 +168,4 @@ export const CamperItem = ({ camperData }) => {
       </ListItem>
     </>
   );
-
-  // return (
-  //   <>
-  //     <CampersList>
-  //       {createTemplate(campers)}
-  //       <BasicModalWindow isOpen={modalIsOpen} onRequestClose={closeModal}>
-  //         <div style={{ height: '500px', width: '500px' }}></div>
-  //       </BasicModalWindow>
-  //     </CampersList>
-  //   </>
-  // );
 };

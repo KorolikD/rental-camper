@@ -12,6 +12,7 @@ import {
   RadioButton,
   RatingLocationWrapper,
   ReviewText,
+  ScrollWrapper,
   SecondColumn,
   SvgTextWrapper,
   Text,
@@ -77,49 +78,52 @@ export const CamperModalContent = ({ camperData }) => {
         <Price>{`€${price}.00`}</Price>
       </TitleWrapper>
 
-      <Gallery>
-        {gallery.map((item, idx) => (
-          <li key={idx}>
-            <Image src={item} alt={name} />
-          </li>
-        ))}
-      </Gallery>
+      <ScrollWrapper>
+        <Gallery>
+          {gallery.map((item, idx) => (
+            <li key={idx}>
+              <Image src={item} alt={name} />
+            </li>
+          ))}
+        </Gallery>
+        <DescriptionText>{description}</DescriptionText>
+        <LinkWrapper>
+          <RadioButton
+            ref={featuresButtonRef}
+            type="radio"
+            name="modal-navigate"
+            id="modal-navigate-features"
+            value="features"
+            onClick={handleButtonCheck}
+          />
+          <ModalNavigate htmlFor="modal-navigate-features">
+            Features
+          </ModalNavigate>
 
-      <DescriptionText>{description}</DescriptionText>
-
-      <LinkWrapper>
-        <RadioButton
-          ref={featuresButtonRef}
-          type="radio"
-          name="modal-navigate"
-          id="modal-navigate-features"
-          value="features"
-          onClick={handleButtonCheck}
-        />
-        <ModalNavigate htmlFor="modal-navigate-features">
-          Features
-        </ModalNavigate>
-
-        <RadioButton
-          ref={reviewsButtonRef}
-          type="radio"
-          name="modal-navigate"
-          id="modal-navigate-reviews"
-          value="reviews"
-          onClick={handleButtonCheck}
-        />
-        <ModalNavigate htmlFor="modal-navigate-reviews">Reviews</ModalNavigate>
-      </LinkWrapper>
-
-      <UnderLinkContentWrapper>
-        <FirstColumn>
-          {checkedButton === 'features' && <Features camperData={camperData} />}
-          {checkedButton === 'reviews' && <Reviews camperData={camperData} />}
-        </FirstColumn>
-        <SecondColumn>
-          <CamperBookingForm />
-        </SecondColumn>
-      </UnderLinkContentWrapper>
+          <RadioButton
+            ref={reviewsButtonRef}
+            type="radio"
+            name="modal-navigate"
+            id="modal-navigate-reviews"
+            value="reviews"
+            onClick={handleButtonCheck}
+          />
+          <ModalNavigate htmlFor="modal-navigate-reviews">
+            Reviews
+          </ModalNavigate>
+        </LinkWrapper>
+        <UnderLinkContentWrapper>
+          <FirstColumn>
+            {checkedButton === 'features' && (
+              <Features camperData={camperData} />
+            )}
+            {checkedButton === 'reviews' && <Reviews camperData={camperData} />}
+          </FirstColumn>
+          <SecondColumn>
+            <CamperBookingForm />
+          </SecondColumn>
+        </UnderLinkContentWrapper>
+      </ScrollWrapper>
     </ContentWrapper>
   );
 };

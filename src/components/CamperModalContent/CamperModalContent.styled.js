@@ -5,7 +5,8 @@ import { theme } from '../../styles';
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 902px;
+  width: 910px;
+  height: 720px;
 `;
 
 export const TitleWrapper = styled.div`
@@ -55,6 +56,41 @@ export const Price = styled.p`
   font-size: ${theme.fontSizes.large};
   line-height: 125%;
   color: ${theme.colors.main};
+`;
+
+export const ScrollWrapper = styled.div`
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Фон прокрутки */
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  /* Бар прокрутки */
+  &::-webkit-scrollbar-thumb {
+    background: ${theme.colors.scroll};
+    border-radius: ${theme.radii.sm};
+  }
+
+  /* При наведенні на бар прокрутки */
+  &::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background: ${theme.colors.scrollHover};
+  }
+`;
+
+export const ScrollContent = styled.div`
+  position: absolute; /* Встановлюємо абсолютне позиціонування для ScrollContent */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll; /* Увімкнемо вертикальну прокрутку тут для контенту */
 `;
 
 export const Gallery = styled.div`
