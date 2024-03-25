@@ -1,4 +1,4 @@
-import { Text, Title, Wrapper } from './Home.styled';
+import { NavigateLink, Text, Title, Wrapper } from './Home.styled';
 
 const Home = () => {
   return (
@@ -15,6 +15,8 @@ const Home = () => {
         So, hit on the open road with our app and find your perfect campervan
         for an unforgettable trip!
       </Text>
+
+      <NavigateLink to={'/catalog'}> {`> Get started <`}</NavigateLink>
     </Wrapper>
   );
 };

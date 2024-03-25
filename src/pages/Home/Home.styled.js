@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import backgroundImage from '../../img/home-background.jpg';
 import { theme } from '../../styles';
+import { NavLink } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -41,4 +42,23 @@ export const Text = styled.p`
   font-size: 20px;
   line-height: 125%;
   color: ${theme.colors.main};
+`;
+
+export const NavigateLink = styled(NavLink)`
+  display: block;
+  width: max-content;
+  padding: 8px 8px;
+
+  color: ${theme.colors.button};
+  cursor: pointer;
+  font-size: ${theme.fontSizes.medium};
+  font-weight: 600;
+  min-width: 80px;
+
+  transition: ${`color ${theme.animation.cubicBezier}`};
+
+  &:hover,
+  &:focus {
+    color: ${theme.colors.buttonHover};
+  }
 `;

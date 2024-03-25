@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../../styles';
 
 export const FormTitle = styled.h4`
+  font-family: ${theme.fonts.mainFont};
   font-weight: 600;
   font-size: ${theme.fontSizes.medium};
   line-height: 120%;
@@ -15,6 +16,7 @@ export const FormWrapper = styled.div`
 `;
 
 export const Text = styled.p`
+  font-family: ${theme.fonts.mainFont};
   font-weight: 400;
   font-size: ${theme.fontSizes.small};
 

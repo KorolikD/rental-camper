@@ -75,7 +75,7 @@ export const CamperItem = ({ camperData }) => {
             <TitleWrapper>
               <Title>{name}</Title>
               <PriceWrapper>
-                <Price>{`€${price}.00`}</Price>
+                <Price>{`€${price},00`}</Price>
                 <button onClick={handleFavoriteButtonClick}>
                   <SvgCustom
                     icon={'heart'}

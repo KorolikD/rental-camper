@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { CamperCardsWrapper } from './Favorites.styled';
+import { CamperCardsWrapper, NavigateLink, Text } from './Favorites.styled';
 import { ButtonLoadMore, CamperCards } from '../../components';
 import {
   selectCurrentPage,
@@ -38,6 +38,12 @@ const Favorites = () => {
 
   return (
     <>
+      {favorites.length === 0 && (
+        <CamperCardsWrapper>
+          <Text>It seems you have not added anything to favorites...</Text>
+          <NavigateLink to={'/catalog'}> {`> Go to catalog <`}</NavigateLink>
+        </CamperCardsWrapper>
+      )}
       {favorites.length > 0 && (
         <CamperCardsWrapper>
           <CamperCards campers={favoritesPaginate} />

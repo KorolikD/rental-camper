@@ -31,6 +31,7 @@ export const NavigateLink = styled(NavLink)`
 
 export const Header = styled.header`
   background-color: ${theme.colors.mainBackground};
+  width: 100%;
 
   padding: 16px 0;
   margin-bottom: 60px;

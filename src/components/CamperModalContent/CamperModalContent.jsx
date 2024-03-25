@@ -75,7 +75,7 @@ export const CamperModalContent = ({ camperData }) => {
           </SvgTextWrapper>
         </RatingLocationWrapper>
 
-        <Price>{`€${price}.00`}</Price>
+        <Price>{`€${price},00`}</Price>
       </TitleWrapper>
 
       <ScrollWrapper>

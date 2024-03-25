@@ -39,12 +39,7 @@ export const CamperBookingForm = () => {
           />
 
           <label htmlFor="">
-            <TextArea
-              name="booking-form"
-              placeholder={'Comment'}
-              // rows="4"
-              // cols="50"
-            ></TextArea>
+            <TextArea name="booking-form" placeholder={'Comment'}></TextArea>
           </label>
         </InputsWrapper>
 

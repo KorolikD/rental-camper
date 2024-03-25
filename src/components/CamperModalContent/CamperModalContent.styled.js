@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { theme } from '../../styles';
-// import { NavLink as Link } from 'react-router-dom';
 
 export const ContentWrapper = styled.div`
   display: flex;
@@ -14,6 +13,7 @@ export const TitleWrapper = styled.div`
 `;
 
 export const Title = styled.h3`
+  font-family: ${theme.fonts.mainFont};
   font-weight: 600;
   font-size: ${theme.fontSizes.large};
   line-height: 125%;
@@ -34,6 +34,7 @@ export const SvgTextWrapper = styled.div`
 `;
 
 export const ReviewText = styled.p`
+  font-family: ${theme.fonts.mainFont};
   font-weight: 400;
   font-size: ${theme.fontSizes.small};
   line-height: 150%;
@@ -45,6 +46,7 @@ export const ReviewText = styled.p`
 `;
 
 export const Text = styled.p`
+  font-family: ${theme.fonts.mainFont};
   font-weight: 400;
   font-size: ${theme.fontSizes.small};
   line-height: 150%;
@@ -52,6 +54,7 @@ export const Text = styled.p`
 `;
 
 export const Price = styled.p`
+  font-family: ${theme.fonts.mainFont};
   font-weight: 600;
   font-size: ${theme.fontSizes.large};
   line-height: 125%;
@@ -84,15 +87,6 @@ export const ScrollWrapper = styled.div`
   }
 `;
 
-export const ScrollContent = styled.div`
-  position: absolute; /* Встановлюємо абсолютне позиціонування для ScrollContent */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: scroll; /* Увімкнемо вертикальну прокрутку тут для контенту */
-`;
-
 export const Gallery = styled.div`
   display: flex;
   gap: 16px;
@@ -108,6 +102,7 @@ export const Image = styled.img`
 
 export const DescriptionText = styled.p`
   display: inline-block;
+  font-family: ${theme.fonts.mainFont};
   font-weight: 400;
   font-size: ${theme.fontSizes.small};
   line-height: 150%;
@@ -137,43 +132,13 @@ export const LinkWrapper = styled.div`
   }
 `;
 
-// export const NavLink = styled(Link)`
-//   display: block;
-//   padding-bottom: 24px;
-//   cursor: pointer;
-//   position: relative;
-
-//   font-weight: 600;
-//   font-size: ${theme.fontSizes.medium};
-//   line-height: 120%;
-//   color: ${theme.colors.main};
-
-//   &.active::after {
-//     content: '';
-//     display: block;
-//     height: 5px;
-//     width: 100%;
-//     position: absolute;
-//     top: 100%;
-//     left: 0;
-//     transform: translateY(-3px);
-
-//     background-color: ${theme.colors.accent};
-//   }
-
-//   transition: ${`color ${theme.animation.cubicBezier}`};
-
-//   &:hover {
-//     color: ${theme.colors.buttonHover};
-//   }
-// `;
-
 export const ModalNavigate = styled.label`
   display: block;
   padding-bottom: 24px;
   cursor: pointer;
   position: relative;
 
+  font-family: ${theme.fonts.mainFont};
   font-weight: 600;
   font-size: ${theme.fontSizes.medium};
   line-height: 120%;

@@ -3,9 +3,6 @@ import { theme } from '../../styles';
 import { SvgCustom } from '../../components';
 import { CategoriesList, ListItem, Text } from './Categories.styled';
 
-// ! Підключення
-//  <Categories camper={campers[0]} />
-
 export const Categories = ({ camper }) => {
   const createTemplate = (camper) => {
     const {

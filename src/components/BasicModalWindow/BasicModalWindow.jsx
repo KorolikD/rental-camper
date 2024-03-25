@@ -9,7 +9,7 @@
 //   setIsModalOpen(false);
 // };
 
-//!_____________________ Рендер модального вікна.
+// !_____________________ Рендер модального вікна.
 
 // <BasicModalWindow isOpen={modalIsOpen} onRequestClose={closeModal}>
 {
