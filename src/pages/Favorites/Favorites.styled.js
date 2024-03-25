@@ -7,4 +7,5 @@ export const CamperCardsWrapper = styled.div`
   justify-content: center;
 
   gap: 50px;
+  padding-bottom: 40px;
 `;

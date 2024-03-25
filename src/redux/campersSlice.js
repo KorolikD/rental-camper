@@ -3,9 +3,13 @@ import { fetchCampers } from './operators';
 
 const tasksInitialState = {
   campersData: [],
+  paginateData: [],
   favorites: [],
+  favoritesPaginate: [],
   isLoading: false,
   error: null,
+  currentPage: 1,
+  limit: 4,
 };
 
 const campersSlice = createSlice({
@@ -26,11 +30,46 @@ const campersSlice = createSlice({
       state.favorites.push(action.payload);
     },
 
-    deleteFavorite(state, action) {
-      const index = state.favorites.findIndex(
-        (camper) => camper._id === action.payload._id
-      );
-      state.favorites.splice(index, 1);
+    renderFirstPaginatePage(state, action) {
+      state.paginateData = [
+        ...action.payload.slice(
+          state.currentPage * state.limit - state.limit,
+          state.currentPage * state.limit
+        ),
+      ];
+    },
+
+    paginateCampers(state, action) {
+      state.paginateData = [
+        ...state.paginateData,
+        ...action.payload.slice(
+          state.currentPage * state.limit - state.limit,
+          state.currentPage * state.limit
+        ),
+      ];
+    },
+
+    renderFirstFavoritePage(state, action) {
+      state.favoritesPaginate = [
+        ...action.payload.slice(
+          state.currentPage * state.limit - state.limit,
+          state.currentPage * state.limit
+        ),
+      ];
+    },
+
+    paginateFavorite(state, action) {
+      state.favoritesPaginate = [
+        ...state.favoritesPaginate,
+        ...action.payload.slice(
+          state.currentPage * state.limit - state.limit,
+          state.currentPage * state.limit
+        ),
+      ];
+    },
+
+    setCurrentPage(state, action) {
+      state.currentPage = action.payload;
     },
   },
 
@@ -51,5 +90,12 @@ const campersSlice = createSlice({
   },
 });
 
-export const { toggleFavorite, deleteFavorite } = campersSlice.actions;
+export const {
+  toggleFavorite,
+  renderFirstPaginatePage,
+  paginateCampers,
+  setCurrentPage,
+  renderFirstFavoritePage,
+  paginateFavorite,
+} = campersSlice.actions;
 export const campersReducer = campersSlice.reducer;

@@ -1,32 +1,46 @@
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { CamperCardsWrapper } from './Favorites.styled';
 import { ButtonLoadMore, CamperCards } from '../../components';
-import { selectFavorites } from '../../redux/selectors';
+import {
+  selectCurrentPage,
+  selectFavorites,
+  selectFavoritesPaginate,
+  selectLimit,
+} from '../../redux/selectors';
+import {
+  paginateFavorite,
+  renderFirstFavoritePage,
+  setCurrentPage,
+} from '../../redux/campersSlice';
 
 const Favorites = () => {
-  const [limit] = useState(4);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [items, setItems] = useState([]);
-
   const favorites = useSelector(selectFavorites);
+  const limit = useSelector(selectLimit);
+  const currentPage = useSelector(selectCurrentPage);
+  const favoritesPaginate = useSelector(selectFavoritesPaginate);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setItems((prevItems) => [
-      ...prevItems,
-      ...favorites.slice(currentPage * limit - limit, currentPage * limit),
-    ]);
-  }, [currentPage, limit, favorites]);
+    dispatch(setCurrentPage(1));
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (currentPage > 1) return;
+    dispatch(renderFirstFavoritePage(favorites));
+  }, [dispatch, favorites, currentPage]);
 
   const handleLoadMore = () => {
-    setCurrentPage(currentPage + 1);
+    dispatch(setCurrentPage(currentPage + 1));
+    dispatch(paginateFavorite(favorites));
   };
 
   return (
     <>
       {favorites.length > 0 && (
         <CamperCardsWrapper>
-          <CamperCards campers={items} />
+          <CamperCards campers={favoritesPaginate} />
           {currentPage * limit < favorites.length && (
             <ButtonLoadMore onClick={handleLoadMore} />
           )}

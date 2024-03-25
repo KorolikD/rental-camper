@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import {
   Filters,
   CamperCards,
@@ -12,31 +12,40 @@ import {
 } from './Catalog.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampers } from '../../redux/operators';
-import { selectCampersData, selectIsLoading } from '../../redux/selectors';
+import {
+  selectCampersData,
+  selectCurrentPage,
+  selectIsLoading,
+  selectLimit,
+  selectPaginate,
+} from '../../redux/selectors';
+import {
+  paginateCampers,
+  renderFirstPaginatePage,
+  setCurrentPage,
+} from '../../redux/campersSlice';
 
 const Catalog = () => {
-  const [limit] = useState(4);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [items, setItems] = useState([]);
-
   const campersData = useSelector(selectCampersData);
   const isLoading = useSelector(selectIsLoading);
+  const limit = useSelector(selectLimit);
+  const currentPage = useSelector(selectCurrentPage);
+  const paginateData = useSelector(selectPaginate);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(setCurrentPage(1));
     dispatch(fetchCampers());
   }, [dispatch]);
 
   useEffect(() => {
-    setItems((prevItems) => [
-      ...prevItems,
-      ...campersData.slice(currentPage * limit - limit, currentPage * limit),
-    ]);
-  }, [currentPage, limit, campersData]);
+    dispatch(renderFirstPaginatePage(campersData));
+  }, [dispatch, campersData]);
 
   const handleLoadMore = () => {
-    setCurrentPage(currentPage + 1);
+    dispatch(setCurrentPage(currentPage + 1));
+    dispatch(paginateCampers(campersData));
   };
 
   return (
@@ -47,7 +56,7 @@ const Catalog = () => {
         {(isLoading && <Loader />) ||
           (campersData.length > 0 && (
             <CamperCardsWrapper>
-              <CamperCards campers={items} />
+              <CamperCards campers={paginateData} />
               {currentPage * limit < campersData.length && (
                 <ButtonLoadMore onClick={handleLoadMore} />
               )}
