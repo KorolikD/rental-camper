@@ -1,35 +1,44 @@
 import styled from 'styled-components';
+import backgroundImage from '../../img/home-background.jpg';
+import { theme } from '../../styles';
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 500px;
+  flex-direction: column;
+  padding-top: 60px;
+  gap: 60px;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+
+    background-image: url(${backgroundImage});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: -1;
+  }
 `;
 
 export const Title = styled.h1`
-  margin: 0;
-  margin-right: 10px;
-  color: #ffffff;
-  text-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
-`;
-export const StyledImage = styled.img`
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
+  width: 800px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 125%;
+  color: ${theme.colors.main};
 `;
 
-export const CalendarInputWrap = styled.div`
-  position: relative;
-`;
-
-export const CalendarWrap = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+export const Text = styled.p`
+  width: 700px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 125%;
+  color: ${theme.colors.main};
 `;

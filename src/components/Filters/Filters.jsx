@@ -19,12 +19,6 @@ export const Filters = () => {
   const [showerWC, setShowerWC] = useState(false);
   const [setRadioButton] = useState(null);
 
-  // const [radioButton, setRadioButton] = useState(null);
-
-  // useEffect(() => {
-  //   console.log('🤬>>>  radioButton:\n', radioButton);
-  // }, [radioButton]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
   };

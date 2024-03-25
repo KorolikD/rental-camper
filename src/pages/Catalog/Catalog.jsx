@@ -44,15 +44,15 @@ const Catalog = () => {
       <Filters />
 
       <ContentWrapper>
-        {isLoading && <Loader />}
-        {campersData.length > 0 && (
-          <CamperCardsWrapper>
-            <CamperCards campers={items} />
-            {currentPage * limit < campersData.length && (
-              <ButtonLoadMore onClick={handleLoadMore} />
-            )}
-          </CamperCardsWrapper>
-        )}
+        {(isLoading && <Loader />) ||
+          (campersData.length > 0 && (
+            <CamperCardsWrapper>
+              <CamperCards campers={items} />
+              {currentPage * limit < campersData.length && (
+                <ButtonLoadMore onClick={handleLoadMore} />
+              )}
+            </CamperCardsWrapper>
+          ))}
       </ContentWrapper>
     </PageWrapper>
   );

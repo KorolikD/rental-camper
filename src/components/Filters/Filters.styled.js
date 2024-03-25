@@ -39,6 +39,7 @@ export const FormBlockWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  width: 364px;
 `;
 
 export const Label = styled.label`
