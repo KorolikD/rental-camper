@@ -19,6 +19,7 @@ import {
   PriceWrapper,
   RatingLocationWrapper,
   ReviewText,
+  SvgButton,
   SvgTextWrapper,
   Text,
   Title,
@@ -76,7 +77,7 @@ export const CamperItem = ({ camperData }) => {
               <Title>{name}</Title>
               <PriceWrapper>
                 <Price>{`€${price},00`}</Price>
-                <button onClick={handleFavoriteButtonClick}>
+                <SvgButton onClick={handleFavoriteButtonClick}>
                   <SvgCustom
                     icon={'heart'}
                     height={24}
@@ -92,7 +93,7 @@ export const CamperItem = ({ camperData }) => {
                         : 'transparent'
                     }
                   />
-                </button>
+                </SvgButton>
               </PriceWrapper>
             </TitleWrapper>
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../../styles';
+import { SvgWrap } from '../SvgCustom/SvgCustom.styled';
 
 export const ListItem = styled.li`
   display: flex;
@@ -38,12 +39,17 @@ export const Title = styled.h3`
   font-size: ${theme.fontSizes.large};
   line-height: 125%;
   color: ${theme.colors.main};
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 export const PriceWrapper = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+  margin-left: 10px;
 `;
 
 export const Price = styled.p`
@@ -51,6 +57,16 @@ export const Price = styled.p`
   font-size: ${theme.fontSizes.large};
   line-height: 125%;
   color: ${theme.colors.main};
+`;
+
+export const SvgButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover > ${SvgWrap} {
+    stroke: ${theme.colors.button};
+  }
 `;
 
 export const RatingLocationWrapper = styled.div`
