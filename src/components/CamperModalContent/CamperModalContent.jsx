@@ -22,8 +22,10 @@ import {
 } from './CamperModalContent.styled';
 import { useEffect, useRef, useState } from 'react';
 import { CamperBookingForm, Features, Reviews } from '../../components';
+import { useScrollWithShadow } from '../../hooks';
 
 export const CamperModalContent = ({ camperData }) => {
+  const { boxShadow, onScrollHandler } = useScrollWithShadow();
   const [checkedButton, setCheckedButton] = useState('');
   const { name, gallery, price, rating, reviews, location, description } =
     camperData;
@@ -78,7 +80,8 @@ export const CamperModalContent = ({ camperData }) => {
         <Price>{`€${price},00`}</Price>
       </TitleWrapper>
 
-      <ScrollWrapper>
+      {/* //!!!!! */}
+      <ScrollWrapper onScroll={onScrollHandler} style={{ boxShadow }}>
         <Gallery>
           {gallery.map((item, idx) => (
             <li key={idx}>
