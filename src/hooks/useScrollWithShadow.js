@@ -7,7 +7,7 @@ export function useScrollWithShadow() {
 
   const onScrollHandler = (event) => {
     setScrollTop(event.target.scrollTop);
-    setScrollHeight(event.target.scrollHeight - 1);
+    setScrollHeight(event.target.scrollHeight);
     setClientHeight(event.target.clientHeight);
   };
 

@@ -70,6 +70,8 @@ export const ScrollWrapper = styled.div`
   width: 926px;
   padding-right: 24px;
 
+  transition: ${`all ${theme.animation.cubicBezier}`};
+
   &::-webkit-scrollbar {
     width: 8px;
   }
