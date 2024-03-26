@@ -4,7 +4,7 @@ import { theme } from '../../styles';
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 910px;
+  width: 926px;
   height: 720px;
 `;
 
@@ -62,8 +62,13 @@ export const Price = styled.p`
 `;
 
 export const ScrollWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   overflow-y: scroll;
+  width: 926px;
+  padding-right: 24px;
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -174,7 +179,6 @@ export const RadioButton = styled.input`
 
 export const UnderLinkContentWrapper = styled.div`
   display: flex;
-  width: 902px;
   gap: 24px;
 `;
 

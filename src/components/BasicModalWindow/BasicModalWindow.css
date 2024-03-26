@@ -5,7 +5,7 @@
 .ant-modal-content {
   background-color: #ffffff !important;
   border-radius: 20px !important;
-  padding: 40px !important;
+  padding: 40px 16px 40px 40px !important;
   margin: 40px auto;
   min-width: min-content;
   min-height: min-content;
