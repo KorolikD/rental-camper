@@ -80,7 +80,6 @@ export const CamperModalContent = ({ camperData }) => {
         <Price>{`€${price},00`}</Price>
       </TitleWrapper>
 
-      {/* //!!!!! */}
       <ScrollWrapper onScroll={onScrollHandler} style={{ boxShadow }}>
         <Gallery>
           {gallery.map((item, idx) => (

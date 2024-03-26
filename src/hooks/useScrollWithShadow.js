@@ -7,7 +7,7 @@ export function useScrollWithShadow() {
 
   const onScrollHandler = (event) => {
     setScrollTop(event.target.scrollTop);
-    setScrollHeight(event.target.scrollHeight);
+    setScrollHeight(event.target.scrollHeight - 1);
     setClientHeight(event.target.clientHeight);
   };
 
@@ -17,8 +17,8 @@ export function useScrollWithShadow() {
     const isBetween = scrollTop > 0 && clientHeight < scrollHeight - scrollTop;
 
     let boxShadow = 'none';
-    const top = 'inset 0 8px 5px -5px rgb(200 200 200 / 1)';
-    const bottom = 'inset 0 -8px 5px -5px rgb(200 200 200 / 1)';
+    const top = 'inset 0 8px 5px -5px rgba(51, 51, 51, 0.15)';
+    const bottom = 'inset 0 -8px 5px -5px rgba(51, 51, 51, 0.15)';
 
     if (isTop) {
       boxShadow = bottom;
