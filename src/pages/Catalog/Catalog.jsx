@@ -24,7 +24,6 @@ import {
   renderFirstPaginatePage,
   setCurrentPage,
 } from '../../redux/campersSlice';
-import ScrollToTop from 'react-scroll-up';
 
 const Catalog = () => {
   const campersData = useSelector(selectCampersData);
@@ -57,9 +56,6 @@ const Catalog = () => {
         {(isLoading && <Loader />) ||
           (campersData.length > 0 && (
             <>
-              <ScrollToTop showUnder={160}>
-                <span>UP</span>
-              </ScrollToTop>
               <CamperCardsWrapper>
                 <CamperCards campers={paginateData} />
                 {currentPage * limit < campersData.length && (

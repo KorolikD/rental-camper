@@ -13,7 +13,6 @@ import {
   renderFirstFavoritePage,
   setCurrentPage,
 } from '../../redux/campersSlice';
-import ScrollToTop from 'react-scroll-up';
 
 const Favorites = () => {
   const favorites = useSelector(selectFavorites);
@@ -47,9 +46,6 @@ const Favorites = () => {
       )}
       {favorites.length > 0 && (
         <CamperCardsWrapper>
-          <ScrollToTop showUnder={10}>
-            <span>UP</span>
-          </ScrollToTop>
           <CamperCards campers={favoritesPaginate} />
           {currentPage * limit < favorites.length && (
             <ButtonLoadMore onClick={handleLoadMore} />
