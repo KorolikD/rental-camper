@@ -1,0 +1,18 @@
+import{r as c,j as e,F as b,B as S,T as f,a as C,C as o,L as i,t as a,R as v,b as W,c as L,I as B,u as j,d as l,e as T,s as y,f as P,g as A,h as D,p as I}from"./index-361aef5b.js";import{S as n,B as V,s as E,a as R,b as K,c as M,d as G,e as $,C as z,f as H}from"./CamperBookingForm-fa055287.js";const J=()=>{const[s,m]=c.useState(!1),[r,h]=c.useState(!1),[p,t]=c.useState(!1),[d,k]=c.useState(!1),[g,F]=c.useState(!1),[w]=c.useState(null),q=x=>{x.preventDefault()},u=x=>{w(x.target.value)};return e.jsxs(b,{children:[e.jsx(N,{}),e.jsx(S,{children:"Filters"}),e.jsx(f,{children:"Vehicle equipment"}),e.jsxs(C,{children:[e.jsx(o,{type:"checkbox",checked:s,onChange:()=>{m(!s)},name:"vehicle-equipment",id:"vehicle-equipment-ac",value:"ac"}),e.jsxs(i,{htmlFor:"vehicle-equipment-ac",children:[e.jsx(n,{icon:"filters-AC",color:a.colors.main,height:32,width:32}),"AC"]}),e.jsx(o,{type:"checkbox",checked:r,onChange:()=>{h(!r)},id:"vehicle-equipment-automatic",name:"vehicle-equipment",value:"automatic"}),e.jsxs(i,{htmlFor:"vehicle-equipment-automatic",children:[e.jsx(n,{icon:"filters-transmission",stroke:a.colors.main,height:32,width:32}),"Automatic"]}),e.jsx(o,{type:"checkbox",checked:p,onChange:()=>{t(!p)},id:"vehicle-equipment-kitchen",name:"vehicle-equipment",value:"kitchen"}),e.jsxs(i,{htmlFor:"vehicle-equipment-kitchen",children:[e.jsx(n,{icon:"filters-kitchen",stroke:a.colors.main,height:32,width:32}),"Kitchen"]}),e.jsx(o,{type:"checkbox",checked:d,onChange:()=>{k(!d)},id:"vehicle-equipment-tv",name:"vehicle-equipment",value:"tv"}),e.jsxs(i,{htmlFor:"vehicle-equipment-tv",children:[e.jsx(n,{icon:"filters-TV",stroke:a.colors.main,height:32,width:32}),"TV"]}),e.jsx(o,{type:"checkbox",checked:g,onChange:()=>{F(!g)},id:"vehicle-equipment-shower-WC",name:"vehicle-equipment",value:"shower-WC"}),e.jsxs(i,{htmlFor:"vehicle-equipment-shower-WC",children:[e.jsx(n,{icon:"filters-shower-WC",stroke:a.colors.main,height:32,width:32}),"Shower/WC"]})]}),e.jsx(f,{style:{marginTop:"32px"},children:"Vehicle type"}),e.jsxs(C,{children:[e.jsx(v,{type:"radio",onChange:u,id:"vehicle-type-van",name:"vehicle-type",value:"van"}),e.jsxs(i,{htmlFor:"vehicle-type-van",children:[e.jsx(n,{icon:"filters-van",color:a.colors.main,height:28,width:40}),"Van"]}),e.jsx(v,{type:"radio",onChange:u,id:"vehicle-type-fully-integrated",name:"vehicle-type",value:"fully-integrated"}),e.jsxs(i,{htmlFor:"vehicle-type-fully-integrated",style:{padding:"8px 0"},children:[e.jsx(n,{icon:"filters-fully-integrated",color:a.colors.main,height:28,width:40}),"Fully ",e.jsx("br",{}),"Integrated"]}),e.jsx(v,{type:"radio",onChange:u,id:"vehicle-type-alcove",name:"vehicle-type",value:"alcove"}),e.jsxs(i,{htmlFor:"vehicle-type-alcove",children:[e.jsx(n,{icon:"filters-alcove",color:a.colors.main,height:28,width:40}),"Alcove"]})]}),e.jsx(V,{style:{marginTop:"80px"},type:"submit",onClick:q,children:"Search"})]})},N=()=>e.jsxs(W,{htmlFor:"location",children:["Location",e.jsx(L,{type:"text",name:"location",placeholder:"City"}),e.jsx(B,{children:e.jsx("use",{href:`${E}#location`})})]}),O=j.div`
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+`,Q=j.div`
+  display: flex;
+  width: 888px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 60px;
+`,U=j.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 50px;
+`,Z=()=>{const s=l(R),m=l(K),r=l(M),h=l(G),p=l($),t=T();c.useEffect(()=>{t(y(1)),t(P())},[t]),c.useEffect(()=>{t(A(s))},[t,s]);const d=()=>{t(y(h+1)),t(I(s))};return e.jsxs(O,{children:[e.jsx(J,{}),e.jsx(Q,{children:m&&e.jsx(D,{})||s.length>0&&e.jsx(e.Fragment,{children:e.jsxs(U,{children:[e.jsx(z,{campers:p}),h*r<s.length&&e.jsx(H,{onClick:d})]})})})]})};export{Z as default};
